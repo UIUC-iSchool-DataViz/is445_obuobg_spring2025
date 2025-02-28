@@ -1,9 +1,9 @@
 ---
-title: Lecture 7.1 - Maps!
+title: Lecture 7.1 - Viz Engines
 layout: lecture
 description: >-
- More about maps and their projections
-date: 2024-10-15
+ A bit about Viz Engines
+date: 2024-10-14
 ---
 
 # "Temperature Taking" Quiz
@@ -24,7 +24,7 @@ notes:
 
 ## Where we are: Last week
 
-<img src="images/dataviz_lastweek_t2.png">
+<img src="images/dataviz_lastweek_t3.png">
 
 notes:
 last week we messed around a bit with mappable data and made some interactive dashboards
@@ -36,577 +36,136 @@ last week we messed around a bit with mappable data and made some interactive da
 <img src="images/this_week_diagram.png">
 
 notes:
-this week we'll talk a bit about map projections and a few specific engines
+
+this week we'll start by talking a bit about different visualization engines and then 
+
+we'll talk a bit about map projections and a few specific engines
 
 fyi -- we might not get to much of ipyleaflet and cartopy, but there are some extra notebooks from other years with more examples
 
 ---
 
-## Today's Main Topics
+<br />
+<br />
+<br />
 
- * Maps - in more detail
-   * Projections
-   * Coordinate Systems
-   * Infoviz/Choropleth maps 
-   * Plotting with CartoPy(?)
-   * Plotting with ipyleaflet(?)
-   * Plotting with geopandas
-   * Geojson in general
+# TOPIC 1: Visualization Engines
 
-notes:
-in more detail: last week we started with maps and how we can use bqplot to do a lot of mapping type stuff
-
-This week we will play with a few different mapping and viz engines and deal with the JSON and geo-json format for storing data
-
-again, might not get to as much with cartopy/ipyleaflet
-
----
-
-<br>
-<br>
-<br>
-
-# Topic #1: Maps & their projections
-
----
-
-## Maps
-
-Thinking about map projections is important for GIS data, and generic global info viz.
-
-Let's start by thinking about the fact that...
-
----
-
-## Maps
-
-Thinking about map projections is important for GIS data, and generic global info viz.
-
-Let's start by thinking about the fact that...
-
-The Earth is a sphere.
-
-(Fun question: to what degree is it a sphere?)
-
-Have you ever wrapped a piece of paper around a ball?
-
----
-
-## Projections
-
-To map from one system to another, we must "project" from the original sphere
-to the flat object we are observing.
-
-What are some things we could preserve during such a projection?
-
-<img src="images/mapwrap.gif" height="350"/>
-
-notes:
-One common conversion from sphere to plane is the squashed cylinder approach
-
-This can be used to conserve straight lines (distances)
+notes: 
+since we are starting to explore our first new viz engine, it is worth spending some time thinking about some questions we might want to ask our selves about said engines
 
 
 ---
 
-## Projections
-
-<img src="images/mapsplode.gif" height="350"/>
-
-notes:
-There's always a weird way to do it too. Here we're exploding the sphere into lots of 
-mostly planar pieces that we can just lie out side-by-side.
-
-This may preserve shape well, but it will be hard to use to navigate!
-
----
-
-## Projections: Common Preservations
-
-Typically, one or more of these will be preserved, or at least, the distortion
-will be minimized:
-
- * Area
- * Shape (Conformal)
- * Distance
-
----
-
-## Projections: Common Preservations
-
-Typically, one or more of these will be preserved, or at least, the distortion
-will be minimized:
-
- * Area
- * Shape (Conformal)
- * Distance
-
-There are other properties that can be preserved, as well.  Typically, maps
-will be a "compromise" between preserving different properties.
-
-What happens when we preserve one property over another?
-
----
-
-Mercator is a "conformal" projection.  What is wrong with this?
-
-<!-- .slide: data-background-image="images/mercator.png" data-background-size="auto 80%" -->
-
-notes:
-conformal = shape preserving (at the expense of accurate size)
-
----
-
-## Projections: Distortions
-
-We can characterize distortions in a projection by examining how a known shape
-appears on them.  The Tissot Ellipse of Distortion is a method of showing this
-by drawing circles of a fixed radius and examining their elliptical distortion.
-
-<img src="images/Tissot_indicatrix_world_map_Mercator_proj.svg" height="400">
-
-notes: so here for example, we see that the mercator projection has circles that
-stay circles, though they change in relative size depending on where they are on the map
-
----
-
-What do you notice?
-
-<!-- .slide: data-background-image="images/mercator.png" data-background-size="auto 80%" -->
-
----
-
-<!-- .slide: data-background-image="images/mercator_tissot.png" data-background-size="auto 80%" -->
-
-notes:
-Greenland and Antarctica are HUGE
-
----
-
-<!-- .slide: data-background-image="images/transversemercator.png" data-background-size="auto 95%" -->
-
----
-
-<!-- .slide: data-background-image="images/transversemercator_tissot.png" data-background-size="auto 95%" -->
-
-notes:
-this projection is most accurate near the vertical center line
-
----
-
-<!-- .slide: data-background-image="images/lambertcylindrical.png" data-background-size="auto 95%" -->
-
----
-
-<!-- .slide: data-background-image="images/lambertcylindrical_tissot.png" data-background-size="auto 95%" -->
-
-notes:
-Also known as "equirectangular", this is the favorite format of NASA because it's mathematically straightforward.
-
-Note that the very top line of the image represents a single point on the globe.
-
----
-
-<!-- .slide: data-background-image="images/mollweide.png" data-background-size="auto 95%" -->
-
----
-
-<!-- .slide: data-background-image="images/mollweide_tissot.png" data-background-size="auto 95%" -->
-
-notes:
-this is considered a good compromise between shape-preserving and angle preserving - but it's not perfect at either.
-
----
-
-<!-- .slide: data-background-image="images/sinusoidal.png" data-background-size="auto 95%" -->
-
----
-
-<!-- .slide: data-background-image="images/sinusoidal_tissot.png" data-background-size="auto 95%" -->
-
-notes:
-this has even less distortion than mollweide, but the pointy ends don't feel very elegant and planet-like
-
----
-
-<!-- .slide: data-background-image="images/gnomonic.png" data-background-size="auto 95%" -->
-
----
-
-<!-- .slide: data-background-image="images/gnomonic_tissot.png" data-background-size="auto 95%" -->
-
-notes:
-this is another nightmare scenario like Mercator that was initially created for navigation. Straight lines on this map are the shortest route, but area, shape, and size are distorted.
-
----
-
-## Why bother thinking about projections?
-
-What happens when we make a map that minimizes one region and maximizes
-another?
-
----
-
-## Why bother thinking about projections?
-
-<!--
-<iframe width="1024" height="576" src="https://www.youtube.com/embed/vVX-PrBRtTY?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
--->
-
-<iframe width="1024" height="576" src="https://www.youtube.com/embed/vVX-PrBRtTY?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-notes:
-after watching this, it's useful to know that the Peters projection is actually flawed as a teaching tool because of how much it distorts the shapes of countries near the poles.
-
-**pause recording!**
-
----
-
-## Why bother thinking about projections?
-
-[The True Size Of...](https://thetruesize.com)
-
-notes:
-Let's go see what Greenland actually looks like ...
-
-**did you remember to turn back on the recording??**
-
----
-
-## Why bother thinking about projections?
-
-Why is Europe at the center of all the maps we've looked at?
-
----
-
-## Why bother thinking about projections?
-
-<img src="images/Azimuthal_equidistant_projection.jpg" width="512"/>
-
-notes: there is nothing specifically wrong with putting a pole at the center of the map
-
----
-
-## Why bother thinking about projections?
-
-<img src="images/Azimuthal_equidistant_tissot.png" width="512"/>
-
-notes: also see here that now the equator is very distorted, and the south pole even more so!
-
----
-
-## Why bother thinking about projections?
-
-<img src="images/Waterman_projection.png" width="512"/>
-
-notes: or why bother having a spherical or rectangular shape at all?
-
----
-
-## Why bother thinking about projections?
-
-<img src="images/Waterman_tissot.png" width="512"/>
-
-notes: look how here there is very little distortion of size or shape
-
----
-
-## Maps: Coordinate Systems
-
-Once we have our system of transformation, we need to have a method of
-representing positions.
-
-Three common baseline methods:
-
- * Spherical coordinates
- * Latitude and Longitude
- * Degrees, minutes, seconds
-
-Take care with:
-
- * Zero points
- * North/South, East/West
- * Ranges
-
-
----
-
-## Maps: What to plot?
-
-![more people in green areas](images/moregreen.png)
-
-Source: [Terrible Maps Twitter](https://twitter.com/TerribleMaps?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
-
-notes:
-What should we actually be plotting on a map?
-
-but while it is tempting to plot geospatial data on a map, sometimes it is not useful
-
----
-
-## Maps: What to plot?
-
-![girt](https://pbs.twimg.com/media/FpbvfrEXEBgE5_Y?format=jpg&name=small)
-
-
-notes:
-
-or, on the otherhand, it can be useful to give people a sense of even small geospatial datasets to make a point
-
----
-
-## Maps: What to plot?
-
-![how fish see the world](images/fishmap.png)
-
-notes:
-but it is important to think about projections since it is making use of a common visual encoding (sort of like how the temperature/battery/fill line encodings are used as metaphors for other types of data than temperature/battery/fill)
-
-terrible maps are actually really great!
-
----
-
-<br>
-<br>
-<br>
-
-# Topic #2: Formatting for shape data
-
----
-
-## JSON & GeoJSON
-
-<img src="../week03/images/jsonex.png">
-
-notes:
-json is meant to be a way to store data that is "query" based - i.e. it lends itself to searches well
-
-for this reason, it shows up in web development a lot
-
----
-
-## GeoJSON
-
-<img src="https://www.avenza.com/wp-content/uploads/2017/01/image002-1.png">
-
-notes:
-geojson is just a special json formatting for geographical data
-
-it will specify the "shape" of the data file but also things like its default coordinate reference system which tells you something about the "center" and "stretch" of whatever it lists in its coordinates
-
----
-
-## GeoJSON
-
-<div class="left">
-
-GeoJSON is:
-* data format for encoding geographic data structures
-* uses "geometries", "features" and "collections of features"
-* seven Geometry types/objects
-   1. Point
-   1. LineString
-   1. Polygon
-   1. MultiPoint
-   1. MultiLineString
-   1. MultiPolygon
-   1. GeometryCollection
-
-</div>
-
-<div class="right" markdown=1>
-
-<img src="https://www.avenza.com/wp-content/uploads/2017/01/image002-1.png" alt="drawing" width="200"/>
-
-</div>
-
-
-notes:
-cite: https://image.slidesharecdn.com/geojson-170417122110/95/geojson-1-638.jpg?cb=1492431924
-
-We will see a lot of Polygons & MultiPolygons.
-
----
-
-## GeoJSON
-
-Tips for dealing with GeoJSON:
- * use `.keys()` and progressively drill down to data of interest
- * look for location of `properties` and `features`
-
-We will get practice at this during programming (and in extra notebook examples).
-
-notes:
-often our issue will be linking the information stored in JSON file formats with that of whatever plotting routine we are using
-
-we'll get some practice with this in the coding portion of class
-
----
-
-## Access to geometry files
-
- 1. GeoPandas
- 1. Cartopy (extra)
- 1. ipyleaflet (extra)
+## Evaluating Visualization Engines
+
+ * Costs
+ * Functionality
+ * Aesthetics
  
-notes:
-so, we'll mostly be using geopandas for this lecture, but there are other tools available like cartopy and ipyleaflet
-
-If we have time, we'll go into those, but if not, they are in the extra prep notebook for today if you want to look on your own
+notes: is this engine free or do you have to pay for it?  Does it do what I want?
+Does its plots look like plots I want to make?
 
 ---
 
-## Geopandas
+## Choices
 
-<img src="https://geopandas.readthedocs.io/en/v0.4.0/_images/sphx_glr_create_geopandas_from_pandas_001.png">
-
-notes:
-the calls for geopandas is going to look very similar to pandas calls!
-
----
-
-## Geopandas
-
-```python
-gdf = geopandas.read_file('mapfile.geojson')
-gdf.head()
-gdf.plot()
-```
-
-notes:
-very pandas-like calls we can use
-
----
-
-## Geopandas
-
-```python
-gdf = geopandas.read_file('mapfile.geojson')
-gdf.head()
-gdf.plot()
-```
-
-Map information sources:
- * [https://datagateway.nrcs.usda.gov/](https://datagateway.nrcs.usda.gov/)
- * [US Census info](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html)
- * [City of Champaign](https://gis-cityofchampaign.opendata.arcgis.com/)
+ * Can I get ahold of this software?
+ * Do I install it, or do I use it on a server?
+ * What's the user interface like?
+ * Is it declarative or is it procedural/imperative?
  
-notes:
-we'll just touch on a few data sources, and you'll have the opportunity to explore a few more in the HW, specifically HW#4
+notes: in the HW you will look at several different forms of interfaces for making the same plot and thought a bit about how a user of the viz might go about making different plots and how some pathways to viz might be more or less intuitive for you and your given task 
 
 ---
 
-## Geopandas + contextily
+## License: Software
 
-<img src="https://geopandas.readthedocs.io/en/v0.9.0/_images/gallery_plotting_basemap_background_8_0.png" width='500px'>
-
-notes:
-we'll also play around with using contextily to add backgrounds to maps
-
----
-
-## Other Map Viz
-
- * Google Maps & Earth
- * WorldWide Telescope
- * CesiumJS
- * bqplot
- * Vega & friends
- * cartopy (see extra slides)
- * ipyleaflet (see extra slides)
+ * What can you do with the software?
+ * Can you study the software?
+ * Who can you share it with?
+ * Who can you give your derivative works to?
  
-notes:
-I've added a few extra slides at the end of this slide deck about cartopy and ipyleaflet that we can look over if we get to those topics
+notes: while the viz engines we use in this class are generally open source, you may run into engines that are not or "somewhere in between"
 
-otherwise they are left for your reference
-
----
-
-# To Viz Engines!
+In this case, you might have to think carefully about how you share your viz with others, you can use what you create? Can you actually study how the software works?
 
 ---
 
----
+## License: Software
 
-# Extra Items: CartoPy
+ * Copyleft: share and share-alike
+ * Non-copyleft: share, but don't necessarily need to share-alike
+ * https://choosealicense.com/
+ 
+notes: this website has a bunch of "auto" generated licenses, depending on what kind of license
+you want *your* software to use
 
----
+If you are ever in a position to create software, you can check this out to see what sorts of options you have.
 
-## Intro to cartopy
-
-CartoPy is a toolkit that builds on matplotlib to create fast, easy map
-representations.
-
-We will be relying on three key concepts:
-
- * Axes projections (similar to our polar projections)
- * Coordinate representations
- * Shapes
-
-Using these, we will be able to build out many visualizations.
+Also, many of the open source packages we'll be using (including python) use a specific kind of license.  A lot of folks use the MIT licenses, fyi.
 
 ---
 
-## CartoPy: Projections
+## License: Data
 
-We start out by constructing an axes in CartoPy that uses a given projection:
+ * What can you do with the data?
+ * How do you credit that data?
+ * Can the data be redistributed, remixed, modified?
+ * http://opendefinition.org/guide/data/
+ * https://theodi.org/article/publishers-guide-to-open-data-licensing/
 
-```python
-import cartopy
-import matplotlib.pyplot as plt
+notes: additionally, the data that you chose to use might have a specific license.  So maybe you can use the data for your viz, but not share the data itself with others.
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection=cartopy.crs.Mollweide())
-ax.coastlines()
-```
+How can the data be modified?  Can you share the modified data?
 
----
-
-## CartoPy: Coordinate Reference Systems
-
-Transforming from a spherical reference system to a flat reference system is
-the job of the projection; transforming from one discretization of a sphere to
-another is the job of the coordinate system.
-
-We can utilize Coordinate Reference Systems to describe the *input* coordinate
-system and the *rasterization* system are described.
-
-For example, there are several different ways to draw "straight" lines.  We can
-do both `PlateCarree` and `Geodetic`.
-
-```python
-c_lat, c_lon = 40.1164, -88.2434
-a_lat, a_lon = -18.8792, 47.5079
-fig = plt.figure()
-ax = fig.add_subplot(111, projection = cartopy.crs.PlateCarree())
-ax.gridlines()
-ax.coastlines()
-ax.set_global()
-ax.plot([c_lon, a_lon], [c_lat, a_lat], transform = cartopy.crs.PlateCarree())
-ax.plot([c_lon, a_lon], [c_lat, a_lat], transform = cartopy.crs.Geodetic())
-```
 
 ---
 
-<!-- .slide: data-background-image="images/map_plot1.png" data-background-size="auto 95%" -->
+## Accessibility
 
-notes:
-the blue line is Plate Carree, which maintains a straight line on the lat-lon grid
-
-the orange line is Geodetic, which maintains a straight line around the curvature of the Earth
-
----
-
-<!-- .slide: data-background-image="images/map_plot2.png" data-background-size="auto 95%" -->
-
-notes:
-now even the blue line has some curvature because we are picking a best-of-both-worlds Mollweide projection that doesn't perfectly preserve angle or area.
+ * Is the software installed locally on your machine?
+ * Is it hosted at a local or remote instance?
+ * Who owns the visualizations, and how is access to them controlled?
 
 ---
 
-## ipyleaflet
+## Interface
 
-Leaflet is another mechanism of plotting, displaying and interacting with maps.
+How do you interact with the software?
 
-We will very briefly play with this in Python - could be of use for those that were having issues with cartopy.
+ * Declarative: how do you want the plot to look?
+ * Imperative/Procedural: what are the steps to make the plot look that way?
+
+---
+
+## Evaluation: Costs
+
+The "cost" of software is not exclusively the number of dollars you place on
+the counter when you get a big cardboard box with marketing blurbs on the side.
+
+Think about cost in several ways:
+
+ * Monetary cost for *you* to use the software
+ * Monetary cost for *someone else* to view your creations
+ * Temporal cost of setting up
+ * Cognitive cost for learning and using the system (documentation matters!)
+ * Transmission cost for sharing your creations
+
+---
+
+## Evaluation: Aesthetics
+
+Visualization is trendy.
+
+When you construct something, think about the different ways it will be
+interpreted:
+
+ * How will the viewer understand the story of the data?
+ * What will the _message_ of the visualization be?
+ * Does the visualization say something about you and your handling of the data
+   or utilization of tools?
+
+
+
 
