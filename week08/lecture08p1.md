@@ -8,7 +8,7 @@ date: 2024-10-21
 
 ## Last Week
 
-<img src="images/week09_weekbefore.png">
+<img src="images/week08_weekbefore.png">
 
 notes:
 last week we discussed maps and mappable data
@@ -17,7 +17,7 @@ last week we discussed maps and mappable data
 
 ## This Week
 
-<img src="images/week09.png">
+<img src="images/week08_thisweek.png">
 
 notes: 
 this week we'll start working toward some tools we'll use to start hosting some interactive viz on the web.
@@ -35,7 +35,7 @@ I've kept some of the links to old Iodide/Starboard prep notebooks in the extend
  1. Choosing your viz
  1. Intro to Vega/Vega-lite
  1. Intro to Vega-lite in Altair
- 1. ~~Iodide~~ ~~Starboard~~ Streamlit (if time)
+ 1. Intro to Jekyll (but probably next class)
 
 ---
 
