@@ -21,7 +21,7 @@ setup_script: setup_script.js
 Thus far we have used `bqplot` as our primary declarative method, but we'll start looking at `vega-lite` this week
 
  * `bqplot` - both imperative & declarative methods
- * `vega-lite` - declaritive
+ * `vega-lite` - declarative
 
 ---
 
@@ -33,12 +33,25 @@ their data.
 We will explore vega-lite through:
 1. [Altair](https://altair-viz.github.io/) in Python
 1. Then as a way to save plots for [Jekyll](https://jekyllrb.com/) webpages, hosted on our [GitHub pages](https://pages.github.com/)
+1. And then, we will be exploring this using [Streamlit](https://streamlit.io/) in [HuggingFace](https://huggingface.co/docs/hub/en/spaces-sdks-streamlit).
 
-We will be exploring this using [Streamlit](https://streamlit.io/) in [HuggingFace](https://huggingface.co/docs/hub/en/spaces-sdks-streamlit).
+---
+
+## vega-lite
+
+vega-lite is a high-level method for describing visualizations independently of
+their data.
+
+We will explore vega-lite through:
+1. [Altair](https://altair-viz.github.io/) in Python
+1. Then as a way to save plots for [Jekyll](https://jekyllrb.com/) webpages, hosted on our [GitHub pages](https://pages.github.com/)
+1. And then, we will be exploring this using [Streamlit](https://streamlit.io/) in [HuggingFace](https://huggingface.co/docs/hub/en/spaces-sdks-streamlit).
 
 You can also use `vega-lite` directly with the online editor at:
 
 https://vega.github.io/editor/
+
+(we will do this during the coding portion of the class)
 
 notes:
 **wait until python notebook to go through the editor**
@@ -67,8 +80,8 @@ Then we'll have a *very* hand-wavy intro to how javascript/web dev works
 Today, we are introducing the last few major tools that we will use: [vega-lite](https://vega.github.io/vega-lite/), which drives [Altair](https://altair-viz.github.io/index.html). 
 
 After this: 
- *  [Streamlit](https://streamlit.io/) + [Altair](https://altair-viz.github.io/index.html) (hosted on [HuggingFace](https://huggingface.co/docs/hub/en/spaces-sdks-streamlit), with JavaScript dev within as needed)
  * [Altair](https://altair-viz.github.io/index.html) + [Jekyll](https://jekyllrb.com/)
+ *  [Streamlit](https://streamlit.io/) + [Altair](https://altair-viz.github.io/index.html) (hosted on [HuggingFace](https://huggingface.co/docs/hub/en/spaces-sdks-streamlit), with JavaScript dev within as needed)
 
 ---
 
@@ -84,7 +97,7 @@ Declarative:
 
 ## bqplot objects
 
- * A mark is some mechanism for displaying data.  For example, we might have
+ * A `Mark` is some mechanism for displaying data.  For example, we might have
    data that has a set of x and y values, which we can use `Lines` to
    represent.
  * `Scale` objects describe relationships between visual attributes (position)
@@ -158,10 +171,10 @@ With bqplot, we construct a set of objects that are related:
 
 bqplot has several different marks we can explore.  We have utilized a few:
 
- * `HeatMap`
+ * `HeatMap` (in the extra notebooks)
  * `GridHeatMap`
  * `Bars`
- * `Graph`
+ * `Graph` (later in the class)
 
 ([documentation](https://bqplot.readthedocs.io/en/latest/_generate/bqplot.marks.Mark.html))
 
@@ -189,6 +202,15 @@ We have used several of these different interaction methods:
  * `HandDraw`
  * `PanZoom`
  * `Tooltip`
+
+---
+
+## The Web: A *very* hand-wavy overview
+
+
+notes:
+this will be an EXTREMELY hand wavy overview -- we want to get a sense of where our our interactive will be "housed" on our webpages
+
 
 ---
 
@@ -222,7 +244,7 @@ this will be an EXTREMELY hand wavy overview -- we want to get a sense of where 
 
  * Javascript is "garbage collected"
  * Javascript is [single-threaded](https://dev.to/steelvoltage/if-javascript-is-single-threaded-how-is-it-asynchronous-56gd)
- * Asynchronous programming can be a real noodle-bender (good news is we already handled this with `bqplot` callbacks!)
+ * Asynchronous programming can be a real brain-bender (good news is we already handled this with `bqplot` callbacks!)
 
 notes:
 here "garbage collected" just means JS handles memory management - we don't have to explicitly allocate and deallocate regions in memory for variables
@@ -414,8 +436,8 @@ The syntax you will need to be the most familiar with:
  * `mark`: how to visually represent something
  * [`encoding`](https://vega.github.io/vega-lite/docs/encoding.html): the translation between data and the mark
  * `aggregate`: operating over a collection of points -- `mean`, `sum`, `median`,
-   `min`, `max`, `count` (next week)
- * `filtering`: for plotting subsets of data (next week)
+   `min`, `max`, `count` (next class)
+ * `filtering`: for plotting subsets of data (next class)
  * `type`: `quantitative`, `temporal`, `ordinal`, `nominal`, `geojson`
 
 ---
