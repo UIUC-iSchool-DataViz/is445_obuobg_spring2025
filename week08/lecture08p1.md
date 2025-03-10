@@ -3,7 +3,7 @@ title: Lecture 8.1 - Intro, Choosing viz & Online viz platforms
 layout: lecture
 description: >-
  Choosing what viz type to use
-date: 2024-10-21
+date: 2025-03-12
 ---
 
 ## Last Week

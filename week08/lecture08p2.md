@@ -3,7 +3,7 @@ title: Lecture 8.2 - Vega/Vega-lite
 layout: lecture
 description: >-
  Introduction to Vega/Vega-lite
-date: 2024-10-21
+date: 2025-03-12
 include_vega: true
 setup_script: setup_script.js
 ---
@@ -18,9 +18,9 @@ setup_script: setup_script.js
 
 ## Engines
 
-Thus far we have used `bqplot` as our primary declaritive method, but we'll start looking at `vega-lite` this week
+Thus far we have used `bqplot` as our primary declarative method, but we'll start looking at `vega-lite` this week
 
- * `bqplot` - both imperative & declaritive methods
+ * `bqplot` - both imperative & declarative methods
  * `vega-lite` - declaritive
 
 ---
@@ -29,6 +29,10 @@ Thus far we have used `bqplot` as our primary declaritive method, but we'll star
 
 vega-lite is a high-level method for describing visualizations independently of
 their data.
+
+We will explore vega-lite through:
+1. [Altair](https://altair-viz.github.io/) in Python
+1. **HERE**
 
 We will be exploring this using [Streamlit](https://streamlit.io/) in [HuggingFace](https://huggingface.co/docs/hub/en/spaces-sdks-streamlit).
 
