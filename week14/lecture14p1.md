@@ -11,7 +11,7 @@ date: 2024-12-02
 <img src="../week13/images/week13.png">
 
 notes:
-we've been doing some stuff with Jekyll and we'll finish up a few things and then get a special guest lecture!
+we've been doing some stuff with Streamlit and we'll finish up a few things and then get a special guest lecture!
 
 ---
 
@@ -31,27 +31,14 @@ you can stay in the main room, or there will be breakout rooms for you as well!
 
 ---
 
-## Next Week's Class: Online only
-
-Time to finalize Final Project, Part 3 submissions.
-
----
-
-## Reminder: Streamlit Activity Feedback Survey
-
-We appreciate your input!
-
-
----
-
 ## Notes on Final, Part 3
 
 Due dates:
- 1. First draft of Part 3 -- due Dec 11, will get feedback course participants 
- 1. Post your link in the Canvas forum to get feedback from classmates -- Dec 12 (**all group members must do this**)
- 1. Provide feedback for 3 randomly assigned classmates -- due Dec 15
- 1. Final chance to resubmit your Part 3 -- Dec 18
- 1. Submit video about final project -- Dec 18
+ 1. First draft of Part 3 -- due May 7, will get feedback course participants 
+ 1. Post your link in the Canvas forum to get feedback from classmates -- May 8 (**all group members must do this**)
+ 1. Provide feedback for 3 randomly assigned classmates -- due May 13
+ 1. Final chance to resubmit your Part 3 -- May 16
+ 1. Submit video about final project -- May 16
  
 **Please be aware these are hard deadlines -- no extensions available**
  
