@@ -3,7 +3,7 @@ title: Lecture 13.1 - 3D graphics, Intro to SciViz
 layout: lecture
 description: >-
  How your computer and the internet process 3D graphics.  What is scientific visualization? 
-date: 2024-11-18
+date: 2025-04-16
 ---
 
 ## Last Week
@@ -26,7 +26,7 @@ today we'll discuss a bit about how rendering 3D objects to make them look "phot
 
 ---
 
-## After break: Guest Lecture from NCSA's Advanced Visualization Lab
+## Next Week: Guest Lecture from NCSA's Advanced Visualization Lab
 
 Special guest speaker Week 14!
 
@@ -752,7 +752,7 @@ notes: we haven't covered any viz effects tools but here are a few to be aware o
 
 <img src="images/graphics3d/versus.png" width="800"/>
 
-notes: here is a quick comparision chart to show key differences between a package like yt  & a special effects tool like houdini
+notes: here is a quick comparison chart to show key differences between a package like yt  & a special effects tool like houdini
 
 ---
 
@@ -764,7 +764,7 @@ notes: here is a quick comparision chart to show key differences between a packa
 
 [Astroblend](www.astroblend.com)
 
-### More from the NCSA's Advanced Visualization Lab after the break!
+### More from the NCSA's Advanced Visualization Lab next class!
 
 notes:
 several of us at the NCSA worked on ytini so that Houdini could use some of the features of yt natively!
