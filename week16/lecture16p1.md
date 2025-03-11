@@ -32,31 +32,14 @@ also recall that the maximum you can get on the homework is 100% of that categor
 
 ---
 
-## Extra credit Lab:Altair -- available on 12/11
-
-**Announcement will be made when available -- stay tuned!**
-
-Will have usual "Lab" format + feedback survey.
-
-Worth 75 points, due 12/18.
-
-notes:
-There will be a Lab that folks can choose to do available on the 11th (probably later in the day).  
-
-I'll send out an announcement for this when it is "live".
-
-The 75 points will be split into the actual lab component and then a feedback survey.
-
----
-
 ## Reminders: Final, Part 3
 
 Due dates:
- 1. First draft of Part 3 -- due Dec 11, will get feedback course participants 
- 1. Post your link in the Canvas forum to get feedback from classmates -- Dec 12 (**all group members must do this**)
- 1. Provide feedback for 3 randomly assigned classmates -- due Dec 15
- 1. Final chance to resubmit your Part 3 -- Dec 18
- 1. Submit video about final project -- Dec 18
+ 1. First draft of Part 3 -- due May 7, will get feedback course participants 
+ 1. Post your link in the Canvas forum to get feedback from classmates -- May 8 (**all group members must do this**)
+ 1. Provide feedback for 3 randomly assigned classmates -- due May 13
+ 1. Final chance to resubmit your Part 3 -- May 16
+ 1. Submit video about final project -- May 16
  
 **Please be aware these are hard deadlines -- no extensions available**
  
@@ -171,11 +154,11 @@ also recall that the maximum you can get on the homework is 100% of that categor
 ## Announcements and Reminders: Part 3
 
 Due dates:
- 1. First draft of Part 3 -- due Dec 11, will get feedback course participants 
- 1. Post your link in the Canvas forum to get feedback from classmates -- Dec 12 (**all group members must do this**)
- 1. Provide feedback for 3 randomly assigned classmates -- due Dec 15
- 1. Final chance to resubmit your Part 3 -- Dec 18
- 1. Submit video about final project -- Dec 18
+ 1. First draft of Part 3 -- due May 7, will get feedback course participants 
+ 1. Post your link in the Canvas forum to get feedback from classmates -- May 8 (**all group members must do this**)
+ 1. Provide feedback for 3 randomly assigned classmates -- due May 13
+ 1. Final chance to resubmit your Part 3 -- May 16
+ 1. Submit video about final project -- May 16
  
 **Please be aware these are hard deadlines -- no extensions available**
  
