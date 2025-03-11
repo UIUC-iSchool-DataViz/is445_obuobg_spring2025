@@ -21,17 +21,17 @@ data:
     type: dataLink
     title: Text corpus from Othello
     description: Full text from the play Othello from project Guthenburg
-    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/othello.txt
+    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/refs/heads/main/othello.txt
   - filename: facebook_combined_sm000090_000010.txt
     type: dataLink
     title: Broad facebook data
     description: Several small nodes facebook data
-    link:  https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/facebook_combined_sm000090_000010.txt
+    link:  https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/refs/heads/main/facebook_combined_sm000090_000010.txt
   - filename: facebook_combined_sm000030_000000.txt
     type: dataLink
     title: Major node data
     description: One major node facebook data
-    link:  https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/facebook_combined_sm000030_000000.txt
+    link:  https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/refs/heads/main/facebook_combined_sm000030_000000.txt
 ---
 
 # Network Viz + Text Viz
