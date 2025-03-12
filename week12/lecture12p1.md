@@ -3,12 +3,12 @@ title: Lecture 12.1 - Publishing & Validation
 layout: lecture
 description: >-
  More about publishing and validation, and Streamlit+Altair
-date: 2023-10-31
+date: 2025-04-09
 ---
 
 ## Last Week/This Week
 
-<img src="../week10/images/week10.png">
+<img src="images/week12.png">
 
 notes:
 so far, we've been covering a bit of vega-lite and Altair and started thinking about it in streamlit apps
@@ -25,9 +25,9 @@ There are three components, turned in the last three weeks of class.
 
 You will have three general components:
 
-1. Viz for Self (Due November 20 - individual)
-1. Viz for Peers (Due December 4 - group)
-1. Viz for Others (Due December 11 (for feedback), December 18 (final) - part group/part individual)
+1. Viz for Self (Due April 23 - individual)
+1. Viz for Peers (Due April 30 - group)
+1. Viz for Others (Due May 7 (for feedback), May 16 (final) - part group/part individual)
 
 Be aware:
  * **NO** extensions for these assignments.
@@ -40,16 +40,6 @@ there are NO extensions available -- you can't use one of your three HW extensio
 
 also, parts 2 & 3 will be in a group, however you will pick your own groups AND you can be in a group of 1 if you want -- instructions about this process will be in an announcement later this week
 
-
----
-
-## Groups (Parts 2 & 3)
-
-* Group size: maximum 4, minimum 1 (i.e. doing the final on your own)
-* Ask group members before you join a group!
-* Sign up on Canvas under `People` $\rightarrow$ `Groups`
-* Want to find a group?  Check out the **`#find-a-group-b-section`** channel on Slack (**make sure it is NOT the** `a-section` **that is another class!**)
-* **Group sign-up closes November 11**
 
 ---
 
@@ -381,7 +371,7 @@ with 3D printing, you can make "surfaces" in your dataset (more on that when we 
 
 ## Publishing for this class
 
-See Labs #6 and #7 for different options.
+See Labs #6 and #8 for different options.
 
 notes:
 go to these labs for a reminder -- this is what we will use for your final projects
