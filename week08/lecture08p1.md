@@ -1,5 +1,5 @@
 ---
-title: Lecture 8.1 - Intro, Choosing viz & Online viz platforms
+title: Lecture 8.1 - Intro, Choosing your viz
 layout: lecture
 description: >-
  Choosing what viz type to use

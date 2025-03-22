@@ -1,5 +1,5 @@
 ---
-title: Lecture 8.2 - Vega/Vega-lite
+title: Lecture 8.2 - Vega/Vega-lite, Hand-wavy intro to the web
 layout: lecture
 description: >-
  Introduction to Vega/Vega-lite
