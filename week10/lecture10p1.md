@@ -15,7 +15,7 @@ date: 2024-10-28
 
 ---
 
-## Guest lecturers for the remaining weeks
+## Guest lecturer for the remaining weeks
 
 notes:
 gone, etc, who is taking over and a bit about them
