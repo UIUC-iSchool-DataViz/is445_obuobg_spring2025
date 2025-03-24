@@ -34,7 +34,9 @@ just some reminders about the final project
 
 there are NO extensions available -- you can't use one of your three HW extensions for these components
 
-also, parts 2 & 3 will be in a group, however you will pick your own groups AND you can be in a group of 1 if you want -- instructions about this process will be in an announcement later this week
+also, parts 2 & 3 will be in a group, however you will pick your own groups AND you can be in a group of 1 if you want 
+
+**go to where groups are in student view on Canvas**
 
 
 ---
