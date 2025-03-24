@@ -27,7 +27,7 @@ You will have three general components:
 
 Be aware:
  * **NO** extensions for these assignments.
- * There is a group-submission option (sign up open, reminder in a few weeks!).
+ * There is a group-submission option (sign up open, closes next week!).
 
 note:
 just some reminders about the final project
