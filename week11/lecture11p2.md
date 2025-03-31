@@ -3,7 +3,7 @@ title: Lecture 11.2 - Streamlit & HuggingFace Introduction; VSCode
 layout: lecture
 description: >-
  Streamlit, HuggingFace, VSCode ecosystem
-date: 2023-10-19
+date: 2025-04-02
 
 ---
 

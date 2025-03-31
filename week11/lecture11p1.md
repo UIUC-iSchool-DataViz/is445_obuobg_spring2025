@@ -3,27 +3,27 @@ title: Lecture 11.1 - Viz audience
 layout: lecture
 description: >-
  Considerations of audience
-date: 2023-10-17
+date: 2025-04-02
 
 ---
 
 ## Last Week
 
-<img src="../week10/images/week10.png">
+<img src="images/week11_before.png">
 
 notes:
-reminder of where we are!  
+reminder of where we are as of last week!  We started doing more stuff with Altair interactively, and started doing jekyll stuff
 
 ---
 
 ## This Week
 
-<img src="images/week10.png">
+<img src="images/week11_after.png">
 
 notes:
 this week we will discuss how one has to consider the audience of their visualization - is your audience you? your peers? others?
 
-we'll start linking stuff together more in altair (which we started last week) and streamlit on huggingface
+we'll start linking stuff together more in altair (which we started last week) with Jekyll and then take a look at streamlit
 
 
 ---
