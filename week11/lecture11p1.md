@@ -70,3 +70,10 @@ notes:
 porting of grades may be delayed a bit, but should be up-to-date on PL
 
 ---
+
+## Where things are stored for prep/in class
+
+notes:
+this will be a little different for Jekyll and streamlit stuffs!
+
+**point out that there are now folders with files on the webpage**
