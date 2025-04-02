@@ -13,6 +13,8 @@ custom_js:
 
 # In Class Walkthrough
 
+Getting some practice saving Altair/vega-lite json schemas for our Jekyll page.
+
 ## Case 1: Saving from vega-lite editor
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/from_vega_editor.json" style="width: 100%"></vegachart>
