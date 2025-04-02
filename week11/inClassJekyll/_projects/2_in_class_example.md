@@ -24,6 +24,8 @@ This I created by going to the [vega-editor](https://vega.github.io/editor) and 
 
 ## Case 2: Saving from Altair
 
+Now we'll learn how to save our specifications for inclusion here from a Python notebook.
+
 ### Sub-case 2a: With remotely hosted data
 
 ### Sub-case 2b: With data saved from Python
