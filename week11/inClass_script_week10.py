@@ -46,3 +46,6 @@ chart = (chart1.properties(width=300) | chart2.properties(width=300))
 #chart
 
 tab1, tab2 = st.tabs(['Mobility interactive', 'Other stuff'])
+
+with tab1:
+    st.altair_chart(chart)
