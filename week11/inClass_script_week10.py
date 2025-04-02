@@ -21,3 +21,26 @@ st.header('Altair in Streamlit')
 import altair as alt
 
 mobility_url = 'https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/mobility.csv'
+
+brush = alt.selection_interval(encodings=['x','y'])
+
+chart1 = alt.Chart(mobility_url).mark_rect().encode(
+    alt.X("Student_teacher_ratio:Q", bin=alt.Bin(maxbins=10)),
+    alt.Y("State:O"),
+    alt.Color("count()")
+).properties(
+   height=400
+).add_selection(
+        brush
+)
+
+chart2 = alt.Chart(mobility_url).mark_bar().encode(
+    alt.X("Mobility:Q", bin=True,axis=alt.Axis(title='Mobility Score')),
+    alt.Y('count()', axis=alt.Axis(title='Mobility Score Distribution'))
+).transform_filter(
+    brush
+)
+
+chart = (chart1.properties(width=300) | chart2.properties(width=300))
+
+chart
