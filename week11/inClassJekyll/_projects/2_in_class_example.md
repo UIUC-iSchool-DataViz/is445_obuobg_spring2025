@@ -33,7 +33,7 @@ Now we'll learn how to save our specifications for inclusion here from a Python 
 
 ### Sub-case 2b: With data saved from Python
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/saved_plot2_sp25.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/saved_plot3_sp25.json" style="width: 100%"></vegachart>
 
 
 
