@@ -17,7 +17,7 @@ Getting some practice saving Altair/vega-lite json schemas for our Jekyll page.
 
 ## Case 1: Saving from vega-lite editor
 
-This I created by going to the [vega-editor](https://vega.github.io/editor)
+This I created by going to the [vega-editor](https://vega.github.io/editor) and making sure I used the [vega-datasets](https://github.com/vega/vega-datasets/tree/master/data) direct link to the data and saving with the "Export" from the vega-editor.
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/from_vega_editor.json" style="width: 100%"></vegachart>
 
