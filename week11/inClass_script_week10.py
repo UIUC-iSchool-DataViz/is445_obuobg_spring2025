@@ -17,3 +17,7 @@ img_data = np.random.random((200,200))
 st.image(img_data, caption='random data')
 
 st.header('Altair in Streamlit')
+
+import altair as alt
+
+mobility_url = 'https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/mobility.csv'
