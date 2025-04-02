@@ -13,6 +13,14 @@ custom_js:
 
 # In Class Walkthrough
 
+## Case 1: Saving from vega-lite editor
+
+## Case 2: Saving from Altair
+
+### Sub-case 2a: With remotely hosted data
+
+### Sub-case 2b: With data saved from Python
+
 
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/cars.json" style="width: 100%"></vegachart>
