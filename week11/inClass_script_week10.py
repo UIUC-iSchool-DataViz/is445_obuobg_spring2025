@@ -49,3 +49,10 @@ tab1, tab2 = st.tabs(['Mobility interactive', 'Other stuff'])
 
 with tab1:
     st.altair_chart(chart, theme=None, use_container_width=True)
+
+
+scatters = alt.Chart(mobility_url).mark_point().encode(
+    x='Mobility:Q',
+    y=alt.Y('Population:Q', scale=alt.Scale(type='log')),
+    color=alt.Color('Income:Q', scale=alt.Scale(scheme='sinebow'), bin=alt.Bin(maxbins=5))
+)
