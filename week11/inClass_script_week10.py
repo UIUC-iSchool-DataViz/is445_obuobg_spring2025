@@ -15,3 +15,5 @@ st.image('https://i.redd.it/on-a-scale-of-1-10-how-derpy-is-she-v0-z8gtdwu5n5zb1
 import numpy as np
 img_data = np.random.random((200,200))
 st.image(img_data, caption='random data')
+
+st.header('Altair in Streamlit')
