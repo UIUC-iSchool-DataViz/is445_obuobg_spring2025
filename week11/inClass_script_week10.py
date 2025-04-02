@@ -44,3 +44,5 @@ chart2 = alt.Chart(mobility_url).mark_bar().encode(
 chart = (chart1.properties(width=300) | chart2.properties(width=300))
 
 #chart
+
+tab1, tab2 = st.tabs(['Mobility interactive', 'Other stuff'])
