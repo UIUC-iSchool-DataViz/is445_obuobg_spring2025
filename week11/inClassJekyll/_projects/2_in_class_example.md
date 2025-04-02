@@ -28,6 +28,9 @@ Now we'll learn how to save our specifications for inclusion here from a Python 
 
 ### Sub-case 2a: With remotely hosted data
 
+<vegachart schema-url="{{ site.baseurl }}/assets/json/saved_plot1_sp25.json" style="width: 100%"></vegachart>
+
+
 ### Sub-case 2b: With data saved from Python
 
 
