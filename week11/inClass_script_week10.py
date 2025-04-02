@@ -48,4 +48,4 @@ chart = (chart1.properties(width=300) | chart2.properties(width=300))
 tab1, tab2 = st.tabs(['Mobility interactive', 'Other stuff'])
 
 with tab1:
-    st.altair_chart(chart, theme=None)
+    st.altair_chart(chart, theme=None, use_container_width=True)
