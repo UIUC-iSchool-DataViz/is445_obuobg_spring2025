@@ -1,7 +1,7 @@
 ---
 name: In Class Example
 tools: [Python, HTML, vega-lite, Altair]
-image: assets/pngs/cars.png
+image: assets/pngs/from_vega_editor.png
 description: In class example.
 custom_js:
   - vega.min
