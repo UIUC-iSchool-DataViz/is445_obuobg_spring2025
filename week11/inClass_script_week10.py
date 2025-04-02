@@ -58,4 +58,4 @@ scatters = alt.Chart(mobility_url).mark_point().encode(
 )
 #scatters
 with tab2:
-    st.altair_chart(chart, theme=None, use_container_width=True)
+    st.altair_chart(scatters, theme=None, use_container_width=True)
